@@ -12,7 +12,7 @@ import com.luv2code.hibernate.demo.entity.Review;
 import com.luv2code.hibernate.demo.entity.Student;
 
 
-public class GetCoursesForMaryDemo {
+public class DeletePacmanCourseDemo {
 
 	public static void main(String[] args) {
 
@@ -37,14 +37,15 @@ public class GetCoursesForMaryDemo {
 			session.beginTransaction();
 			
 
-			// get the student mary from db
-			int studentId = 1;
-			Student tempStudent = session.get(Student.class, studentId);
+			// get pacman course from db 
+			int courseId = 10;			
+			Course tempCourse = session.get(Course.class, courseId);
 			
-			System.out.println("\nLoaded Student: " + tempStudent);
-			System.out.println("Courses: " + tempStudent.getCourses());
-			
+			// delete the course
+			System.out.println("Deleting course: " + tempCourse);
 
+			session.delete(tempCourse);
+			
 			//commit transaction
 			session.getTransaction().commit();
 			
