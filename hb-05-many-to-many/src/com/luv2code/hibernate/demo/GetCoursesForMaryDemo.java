@@ -12,7 +12,7 @@ import com.luv2code.hibernate.demo.entity.Review;
 import com.luv2code.hibernate.demo.entity.Student;
 
 
-public class AddCoursesForMaryDemo {
+public class GetCoursesForMaryDemo {
 
 	public static void main(String[] args) {
 
@@ -44,22 +44,7 @@ public class AddCoursesForMaryDemo {
 			System.out.println("\nLoaded Student: " + tempStudent);
 			System.out.println("Courses: " + tempStudent.getCourses());
 			
-			// create more courses
-			Course tempCourse1 = new Course("Rubik's Cube - How to Speed Cube");
-			Course tempCourse2 = new Course("Atari 2600 - Game Development");
-			
-			// add student to courses
-			tempCourse1.addStudent(tempStudent);
-			tempCourse2.addStudent(tempStudent);
-			
-			// save the courses
-			System.out.println("\nSaving the courses ...");
-			
-			session.save(tempCourse1);
-			session.save(tempCourse2);
-			
-	
-			
+
 			//commit transaction
 			session.getTransaction().commit();
 			
